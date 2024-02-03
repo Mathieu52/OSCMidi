@@ -2,12 +2,12 @@ from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 
-class LabeledDropDown(QWidget):
-    def __init__(self, text: str, *args, parent=None):
+class LabeledSlider(QWidget):
+    def __init__(self, text: str, parent=None):
         super().__init__(parent)
-        self.dropdown: QComboBox = None
+        self.slider: QSlider = None
         self.label: QLabel = None
-        self.initUI(text, args)
+        self.initUI(text)
 
     def initUI(self, text: str, *args):
         layout = QHBoxLayout()
@@ -16,9 +16,8 @@ class LabeledDropDown(QWidget):
         self.label.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
         layout.setAlignment(Qt.AlignCenter)
 
-        self.dropdown = QComboBox()
-        self.dropdown.addItems(args[0])
+        self.slider = QSlider(Qt.Horizontal)
 
         layout.addWidget(self.label, 0)
-        layout.addWidget(self.dropdown, 1)
+        layout.addWidget(self.slider, 1)
         self.setLayout(layout)
