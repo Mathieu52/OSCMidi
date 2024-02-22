@@ -1,7 +1,7 @@
 altgraph==0.17.4
 configparser>=5.0.0
 Events==0.5
-Levenshtein==0.25.0
+Levenshtein>=0.25.0
 macholib==1.16.3
 Nuitka==2.0.1
 ordered-set==4.1.0
