@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: kurocha/setup-cpp@v1
     - uses: actions/checkout@v2
             
 
