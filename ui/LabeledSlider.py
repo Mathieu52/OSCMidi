@@ -9,7 +9,7 @@ class LabeledSlider(QWidget):
         self.label: QLabel = None
         self.initUI(text)
 
-    def initUI(self, text: str, *args):
+    def initUI(self, text: str):
         layout = QHBoxLayout()
 
         self.label = QLabel(text)
