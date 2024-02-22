@@ -3,9 +3,10 @@ name: Package Application with Pyinstaller
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -15,7 +16,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Package Application
+    - name: Package Application with Pyinstaller
+      if: github.event_name == 'workflow_dispatch'
       uses: JackMcKew/pyinstaller-action-windows@main
       with:
         path: src
