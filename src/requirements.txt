@@ -4,7 +4,6 @@ Events<=0.5
 Levenshtein<=0.25.0
 macholib<=1.16.3
 Nuitka<=2.0.1
-ordered-set<=4.1.0
 packaging<=23.2
 parse<=1.20.1
 pyinstaller<=6.3.0
