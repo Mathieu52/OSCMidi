@@ -24,5 +24,5 @@ jobs:
 
     - uses: actions/upload-artifact@v2
       with:
-        name: name-of-artifact
-        path: src/dist/windows
+        name: osc_midi
+        path: dist/windows
