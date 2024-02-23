@@ -6,6 +6,11 @@ on:
       tags:
       - '*'
   workflow_dispatch:
+    inputs:
+      tags:
+        description: 'tags'
+        required: true
+        type: string
 
 jobs:
   build:
@@ -19,7 +24,6 @@ jobs:
             
 
     - name: Package Application with Pyinstaller
-      if: github.event_name == 'workflow_dispatch'
       uses: JackMcKew/pyinstaller-action-windows@python3-10-pyinstaller-5-3
       with:
         path: src
@@ -28,3 +32,10 @@ jobs:
       with:
         name: OSCMidi
         path: src/dist/windows
+    - run: zip -r build.zip src/dist/windows/
+    - uses: ncipollo/release-action@v1
+      with:
+        allowUpdates: true
+        artifacts: "build.zip"
+        if: github.event_name == 'workflow_dispatch'
+        tag: ${{ github.event.inputs.tags }}
