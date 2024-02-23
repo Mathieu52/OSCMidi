@@ -6,6 +6,11 @@ on:
       tags:
       - '*'
   workflow_dispatch:
+    inputs:
+      tags:
+        description: 'tags'
+        required: true
+        type: string
 
 jobs:
   build:
