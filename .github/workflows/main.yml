@@ -35,7 +35,7 @@ jobs:
     - run: zip -r build.zip src/dist/windows/
     - uses: ncipollo/release-action@v1
       with:
-        if: github.event_name == 'workflow_dispatch'
-          tag = ${{ github.event.inputs.tags }}
         allowUpdates: true
         artifacts: "build.zip"
+        if: github.event_name == 'workflow_dispatch'
+        tag = ${{ github.event.inputs.tags }}
