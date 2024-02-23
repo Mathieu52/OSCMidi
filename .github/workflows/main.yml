@@ -38,4 +38,4 @@ jobs:
         allowUpdates: true
         artifacts: "build.zip"
         if: github.event_name == 'workflow_dispatch'
-        tag = "${{ github.event.inputs.tags }}"
+        tag: ${{ github.event.inputs.tag }}
