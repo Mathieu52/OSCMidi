@@ -43,7 +43,7 @@ coll = COLLECT(
 )
 app = BUNDLE(
     coll,
-    name='main.app',
+    name='OSCMidi.app',
     icon='icon/icon.png',
     bundle_identifier=None,
 )
