@@ -3,15 +3,16 @@ name: Package Application with Pyinstaller
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+      tags:
+      - '*'
   workflow_dispatch:
 
 jobs:
   build:
-
+    
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - uses: actions/checkout@v2
@@ -19,11 +20,15 @@ jobs:
 
     - name: Package Application with Pyinstaller
       if: github.event_name == 'workflow_dispatch'
-      uses: JackMcKew/pyinstaller-action-windows@main
+      uses: JackMcKew/pyinstaller-action-windows@python3-10-pyinstaller-5-3
       with:
         path: src
 
     - uses: actions/upload-artifact@v2
       with:
-        name: osc_midi
-        path: src/dist
+        name: OSCMidi
+        path: src/dist/windows
+
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "OSCMidi"
