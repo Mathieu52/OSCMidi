@@ -26,9 +26,9 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: OSCMidi
-        path: src/dist/windows
-
+        path: build
+    - run: zip -r build.zip build/
     - uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
-        artifacts: OSCMidi
+        artifacts: "build.zip"
