@@ -32,7 +32,7 @@ jobs:
       with:
         name: OSCMidi
         path: src/dist/windows
-    - run: zip -r build.zip src/dist/windows/
+    - run: zip -r build.zip /
     - uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
