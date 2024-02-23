@@ -28,7 +28,3 @@ jobs:
       with:
         name: OSCMidi
         path: src/dist/windows
-
-    - uses: ncipollo/release-action@v1
-      with:
-        artifacts: "OSCMidi"
