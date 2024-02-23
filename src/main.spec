@@ -38,6 +38,6 @@ exe = EXE(
 app = BUNDLE(
     exe,
     name='OSCMidi.app',
-    icon='icon/icon.icns',
+    icon='icon/icon.png',
     bundle_identifier=None,
 )
