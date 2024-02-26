@@ -3,7 +3,7 @@ import platform
 import sys
 from pathlib import Path
 
-from PySide6 import QtWidgets, QtCore
+from PySide6 import QtWidgets, QtCore, QtGui
 from PySide6.QtWidgets import QApplication
 from parse import parse, Result, Match
 
@@ -30,6 +30,14 @@ elif __file__:
 
 absolute_template_config_file = os.path.join(application_path, template_config_file)
 absolute_config_file = os.path.join(permanent_file_path, config_file)
+
+try:
+    from ctypes import windll  # Only exists on Windows.
+    myappid = 'xz3ra.oscmidi.python.1'
+    windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+except ImportError:
+    pass
+
 
 
 settings_section = 'settings'
@@ -212,6 +220,7 @@ def setAppStyle():
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    app.setWindowIcon(QtGui.QIcon(os.path.join(application_path, 'icon/icon.ico')))
     setAppStyle()
     ui = OSCMidiWidget()
     controller = OSCMidiController(ui, '127.0.0.1')
