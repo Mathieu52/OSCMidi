@@ -35,6 +35,6 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
-        artifacts: "OSCMidi.zip"
+        artifacts: "./"
         if: github.event_name == 'workflow_dispatch'
         tag: ${{ github.event.inputs.tags }}
