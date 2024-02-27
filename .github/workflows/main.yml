@@ -34,7 +34,7 @@ jobs:
         path: src/dist/windows
 
     - name: Compress OSCMidi directory
-      run: zip -jr OSCMidi.zip src/dist/windows/OSCMidi/
+      run: cd src/dist/windows && zip -jr ../../../OSCMidi.zip OSCMidi
     
     - uses: ncipollo/release-action@v1
       with:
