@@ -28,11 +28,6 @@ jobs:
       with:
         path: src
 
-    - uses: actions/upload-artifact@v2
-      with:
-        name: OSCMidi
-        path: src/dist/windows
-
     - name: Compress OSCMidi directory
       run: cd src/dist/windows && zip -r ../../../OSCMidi.zip OSCMidi
     
