@@ -39,7 +39,7 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='oscmidi',
+    name='app',
 )
 app = BUNDLE(
     coll,
