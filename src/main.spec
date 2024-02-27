@@ -39,11 +39,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='app',
-)
-app = BUNDLE(
-    coll,
-    name='OSCMidi.app',
-    icon=None,
-    bundle_identifier=None,
+    name='OSCMidi',
 )
