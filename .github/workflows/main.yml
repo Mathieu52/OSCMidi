@@ -32,9 +32,13 @@ jobs:
       with:
         name: OSCMidi
         path: src/dist/windows
+
+    - name: List Artifact Contents
+      run: ls ${{ github.workspace }}/artifact
+    
     - uses: ncipollo/release-action@v1
       with:
         allowUpdates: true
-        artifacts: "./"
+        artifacts: "artifact/OSCMidi"
         if: github.event_name == 'workflow_dispatch'
         tag: ${{ github.event.inputs.tags }}
