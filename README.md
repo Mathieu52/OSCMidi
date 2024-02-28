@@ -16,7 +16,7 @@ avtr_2ed21ba8-f484-4fd0-b251-0e53dfe3c9c9 - OSC Piano, has keydown keys and is p
 
 ### Prerequisites
 
-- A program called LoopBe1 (LoopBeInternalMidi)[https://nerds.de/en/download.html]
+- A program called LoopBe1 [LoopBeInternalMidi](https://nerds.de/en/download.html)
 
 -----------------------------------
 
