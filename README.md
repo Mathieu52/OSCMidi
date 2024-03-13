@@ -12,6 +12,8 @@ avtr_f5648902-719f-4193-80b9-8d1581f076b4 - Fresh Pianist, has lightup keys
 
 avtr_2ed21ba8-f484-4fd0-b251-0e53dfe3c9c9 - OSC Piano, has keydown keys and is properly synced with mic audio
 
+avtr_9afe6649-5eef-487d-84bf-237ac039d1ca - Newest avatar, not fully complete, but more advanced than the other two
+
 -----------------------------------
 
 ### Prerequisites
