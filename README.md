@@ -11,6 +11,18 @@ OSCMidi enables the connection of any MIDI-enabled piano to a piano avatar in VR
 
 -----------------------------------
 
+### Preview
+
+#### Windows
+image::preview/Preview_Windows_Dark[Windows Dark mode]
+image::preview/Preview_Windows_Light[Windows Light mode]
+
+#### Mac OS
+image::preview/Preview_MacOS_Dark[Mac OS Dark mode]
+image::preview/Preview_MacOS_Light[Mac OS Light mode]
+
+-----------------------------------
+
 ### Avatar IDs
 
 In order to import these you need to use VRCX (look it up if you don't know what it is)
