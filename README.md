@@ -14,12 +14,15 @@ OSCMidi enables the connection of any MIDI-enabled piano to a piano avatar in VR
 ### Preview
 
 #### Windows
-image::preview/Preview_Windows_Dark.png[Windows Dark mode]
-image::preview/Preview_Windows_Light.png[Windows Light mode]
+![Windows Dark mode](https://github.com/Mathieu52/OSCMidi/blob/master/preview/Preview_Window_Dark.png)
+
+![Windows Light mode](https://github.com/Mathieu52/OSCMidi/blob/master/preview/Preview_Window_Light.png)
 
 #### Mac OS
-image::preview/Preview_MacOS_Dark.png[Mac OS Dark mode]
-image::preview/Preview_MacOS_Light.png[Mac OS Light mode]
+
+![Mac OS Dark mode](https://github.com/Mathieu52/OSCMidi/blob/master/preview/Preview_MacOS_Dark.png)
+
+![Mac OS Light mode](https://github.com/Mathieu52/OSCMidi/blob/master/preview/Preview_MacOS_Light.png)
 
 -----------------------------------
 
