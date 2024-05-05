@@ -6,7 +6,8 @@ OSCMidi enables the connection of any MIDI-enabled piano to a piano avatar in VR
 
 ### Notes
 
-The avatars DO NOT MAKE AUDIO, the audio has to come from your mic or through a DAW (Digital Audio Workspace) like FL Studio, Reaper, etc
+- The avatars DO NOT MAKE AUDIO, the audio has to come from your mic or through a DAW (Digital Audio Workspace) like FL Studio, Reaper, etc
+- Supports both Mac OS and Windows (As VRChat doesn't currently support Mac OS, contact me and I'll be happy to provide you with a compatible copy of the software) 
 
 -----------------------------------
 
