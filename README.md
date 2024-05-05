@@ -1,5 +1,11 @@
 # OSCMidi
 
+OSCMidi allows connection of any MIDI enabled Piano to VRChat piano avatar. OSCMidi is designed with Virtual Pianists in mind, including a section to note, mark and search songs, allowing to quickly generate get a random song you should know or to simply check if you know a specific song in the first place.
+
+-----------------------------------
+
+### Notes
+
 The avatars DO NOT MAKE AUDIO, the audio has to come from your mic or through a DAW (Digital Audio Workspace) like FL Studio, Reaper, etc
 
 -----------------------------------
