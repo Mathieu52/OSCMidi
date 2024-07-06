@@ -68,7 +68,7 @@ class OSCMidiController:
                 self._midi_out.close_port()
 
             try:
-                self._midi_out.openPort(output_port.getIndex())
+                self._midi_out.open_port(output_port.getIndex())
                 return
             except:
                 self._midi_out.close_port()
