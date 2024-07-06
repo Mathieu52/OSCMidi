@@ -5,7 +5,7 @@ from typing import cast
 
 import rtmidi
 from PySide6.QtCore import QThread, Signal, QTimer
-from rtmidi import MidiIn
+from rtmidi import MidiIn, MidiOut
 
 import AlertHandler
 from Port import Port
@@ -21,8 +21,8 @@ class OSCMidiController:
     def __init__(self, oscmidi_widget: OSCMidiWidget, IP: str = IP_DEFAULT_VALUE):
         self.oscmidi_widget = oscmidi_widget
 
-        self._midi_in = rtmidi.MidiIn()
-        self._midi_out = rtmidi.MidiOut()
+        self._midi_in: MidiIn = rtmidi.MidiIn()
+        self._midi_out: MidiOut = rtmidi.MidiOut()
 
         self._midi_in.ignore_types(False, False, False)
 
@@ -52,10 +52,14 @@ class OSCMidiController:
             try:
                 self._midi_in.open_port(input_port.getIndex())
                 return
-            except:
+            except rtmidi.RtMidiError as e:
                 self._midi_in.close_port()
                 AlertHandler.show_warning('Device is not available',
                                           "Device ({input_port.getName()}) is currently in use, make sure it's not")
+
+                AlertHandler.show_warning(f"DEBUG - {e.type}",
+                                          str(e))
+
                 self.oscmidi_widget.resetSelectedInput()
                 return
         else:
@@ -68,12 +72,16 @@ class OSCMidiController:
                 self._midi_out.close_port()
 
             try:
-                self._midi_out.openPort(output_port.getIndex())
+                self._midi_out.open_port(output_port.getIndex())
                 return
-            except:
+            except rtmidi.RtMidiError as e:
                 self._midi_out.close_port()
-                AlertHandler.show_warning('Device is not available',
+                AlertHandler.show_warning(f"Device is not available",
                                           f"An issue has occurred while trying to connect to device:\n{output_port.getName()}")
+
+                AlertHandler.show_warning(f"DEBUG - {e.type}",
+                                          str(e))
+
                 self.oscmidi_widget.resetSelectedOutput()
                 return
         else:
