@@ -111,8 +111,15 @@ class OSCMidiController:
         if not type == Type.NOTE_OFF and not type == Type.NOTE_ON:
             return
 
-        velocity = midi_message[2]
+        velocity: int = midi_message[2] & 0x7F
         note: int = midi_message[1] & 0x7F
+
+        if type == Type.NOTE_ON:
+            print("NOTE_ON")
+        elif type == Type.NOTE_OFF:
+            print("NOTE_OFF")
+        print("NOTE: ", note)
+        print("VELOCITY: ", velocity)
 
         if not self._piano.hasKey(note):
             return
