@@ -133,7 +133,7 @@ class OSCMidiController:
 
                 if message:
                     if self._midi_out.is_port_open():
-                        self._midi_out.sendMessage(message)
+                        self._midi_out.send_message(message[0])
 
                     try:
                         self.simulateKey(message[0])
