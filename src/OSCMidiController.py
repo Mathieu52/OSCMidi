@@ -107,9 +107,11 @@ class OSCMidiController:
             return
 
         type: Type = Type(midi_message[0] & 0xF0)
+
         if not type == Type.NOTE_OFF and not type == Type.NOTE_ON:
             return
 
+        velocity = midi_message[2]
         note: int = midi_message[1] & 0x7F
 
         if not self._piano.hasKey(note):
@@ -119,7 +121,7 @@ class OSCMidiController:
             if self.oscmidi_widget.areParticlesEnabled():
                 self._piano.createParticle(note, self.oscmidi_widget.getParticleLifeTime())
             self._piano.pressKey(note)
-        elif type == Type.NOTE_OFF:
+        elif type == Type.NOTE_OFF or velocity == 0:
             self._piano.releaseKey(note)
 
 
