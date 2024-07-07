@@ -124,7 +124,7 @@ class OSCMidiController:
         if not self._piano.hasKey(note):
             return
 
-        if type == Type.NOTE_ON:
+        if type == Type.NOTE_ON and velocity != 0:
             if self.oscmidi_widget.areParticlesEnabled():
                 self._piano.createParticle(note, self.oscmidi_widget.getParticleLifeTime())
             self._piano.pressKey(note)
